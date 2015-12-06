@@ -1,0 +1,23 @@
+import java.security.SecureRandom;
+public class SentenceBuilder {
+
+    public static void main(String[] args)
+    {
+        SecureRandom randomWords = new SecureRandom();
+
+        String[] article = {"The ", "A ", "One ", "Some ", "Any "};
+        String[] noun = {"boy ", "girl ", "dog ", "town ", "car "};
+        String[] verb = {"drove ", "ran ", "jumped ", "walked ", "skipped "};
+        String[] preposition = {"to ", "from ", "over ", "under ", "on "};
+
+        for (int newString = 0; newString <20; newString++)
+        {
+            System.out.printf("%s.%n", article[randomWords.nextInt(5)].concat
+                    (noun[randomWords.nextInt(5)].concat
+                            (verb[randomWords.nextInt(5)].concat
+                                    (preposition[randomWords.nextInt(5)].concat
+                                            (article[randomWords.nextInt(5)].toLowerCase().concat
+                                                    (noun[randomWords.nextInt(5)].trim()))))));
+        }
+    }
+}
